@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Analytics Sample Page</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Google Analytics Sample Page</h1>
+    <p>This is a sample page that demonstrates some features of Google Analytics.</p>
+    
+    <button id="btnClick">Click Me</button>
+    
+    <script>
+      // Google Analytics tracking code
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'YOUR_TRACKING_ID', 'auto');
+
+      // Track pageview
+      ga('send', 'pageview');
+
+      // Track button click event
+      document.getElementById('btnClick').addEventListener('click', function() {
+        ga('send', 'event', 'Button', 'Click', 'Button Clicked');
+      });
+    </script>
+  </div>
+</body>
+</html>
